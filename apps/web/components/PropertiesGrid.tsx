@@ -1,3 +1,8 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { InvestModal } from "./InvestModal";
+
 interface PropertyData {
   id: string;
   title: string;
@@ -5,30 +10,35 @@ interface PropertyData {
   type: string;
   expectedYield: string | number;
   tokenPrice: string | number;
+  availableTokens?: number;
+  contractAddress?: string;
 }
 
-async function getProperties(): Promise<PropertyData[]> {
-  try {
-    const res = await fetch('http://localhost:4000/properties', {
-      cache: 'no-store', // Ensures real-time data on every request
-    });
-    if (!res.ok) throw new Error('Failed to fetch properties');
-    return res.json();
-  } catch (error) {
-    console.error('Error loading properties from API:', error);
-    return [];
-  }
-}
+export function PropertiesGrid() {
+  const [properties, setProperties] = useState<PropertyData[]>([]);
+  const [selectedProperty, setSelectedProperty] = useState<PropertyData | null>(null);
 
-export async function PropertiesGrid() {
-  const properties = await getProperties();
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch("http://localhost:4000/properties");
+        if (res.ok) {
+          const data = await res.json();
+          setProperties(data);
+        }
+      } catch (e) {
+        console.error("Could not fetch properties", e);
+      }
+    }
+    load();
+  }, []);
 
   const getIcon = (type: string) => {
     switch (type) {
-      case 'COMMERCIAL': return '🏢';
-      case 'RESIDENTIAL': return '🏘️';
-      case 'PLOTS': return '🌿';
-      default: return '📍';
+      case "COMMERCIAL": return "🏢";
+      case "RESIDENTIAL": return "🏘️";
+      case "PLOTS": return "🌿";
+      default: return "📍";
     }
   };
 
@@ -67,10 +77,13 @@ export async function PropertiesGrid() {
                 <div>
                   <div className="text-[11px] font-medium text-white-55 uppercase tracking-wide">From</div>
                   <div className="text-xl font-extrabold text-white tracking-tight">
-                    ₹{Number(prop.tokenPrice).toLocaleString('en-IN')}
+                    ₹{Number(prop.tokenPrice).toLocaleString("en-IN")}
                   </div>
                 </div>
-                <button className="text-xs font-semibold text-white px-4 py-2 rounded bg-white-12 border border-white-30 hover:bg-white-30 transition-all cursor-pointer">
+                <button
+                  onClick={() => setSelectedProperty(prop)}
+                  className="text-xs font-semibold text-white px-4 py-2 rounded bg-white-12 border border-white-30 hover:bg-white-30 transition-all cursor-pointer"
+                >
                   Invest now
                 </button>
               </div>
@@ -78,6 +91,17 @@ export async function PropertiesGrid() {
           </div>
         ))}
       </div>
+
+      {selectedProperty && (
+        <InvestModal
+          property={{
+            ...selectedProperty,
+            availableTokens: selectedProperty.availableTokens || 1000,
+          }}
+          isOpen={!!selectedProperty}
+          onClose={() => setSelectedProperty(null)}
+        />
+      )}
     </section>
   );
 }
