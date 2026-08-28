@@ -6,7 +6,7 @@ export class PropertiesService {
   constructor(private readonly prisma: PrismaService) {}
 
   async getAllProperties() {
-    return this.prisma.client.property.findMany({
+    return this.prisma.property.findMany({
       where: { status: 'ACTIVE' },
       orderBy: { createdAt: 'desc' },
     });
@@ -22,7 +22,7 @@ export class PropertiesService {
     expectedYield: number;
     spvName: string;
   }) {
-    return this.prisma.client.property.create({
+    return this.prisma.property.create({
       data: {
         ...data,
         availableTokens: data.totalTokens,

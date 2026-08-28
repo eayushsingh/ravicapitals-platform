@@ -18,7 +18,7 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="px-12 py-24 border-t border-white-12">
+    <section id="how-it-works" className="px-6 md:px-12 py-16 md:py-24 border-t border-white-12">
       <div className="text-[11px] font-semibold tracking-[3px] uppercase text-white-55 mb-5">
         How it works
       </div>

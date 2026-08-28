@@ -78,8 +78,8 @@ export function InvestModal({ property, isOpen, onClose }: InvestModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-      <div className="bg-[#1e293b] border border-white/10 rounded-2xl max-w-md w-full p-6 text-white shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm sm:p-4">
+      <div className="bg-[#1e293b] border border-white/10 max-sm:border-b-0 max-sm:rounded-b-none rounded-t-3xl sm:rounded-2xl max-w-md w-full p-6 pb-10 sm:pb-6 text-white shadow-2xl animate-in slide-in-from-bottom-10 sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-200">
         <div className="flex justify-between items-center mb-5 pb-3 border-b border-white/10">
           <h3 className="text-lg font-bold">Invest in {property.title}</h3>
           <button onClick={onClose} className="text-white/50 hover:text-white text-sm">✕</button>

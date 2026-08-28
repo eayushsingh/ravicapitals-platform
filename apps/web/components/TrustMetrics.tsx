@@ -7,7 +7,7 @@ export function TrustMetrics() {
   ];
 
   return (
-    <section className="px-12 py-24 border-t border-white-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <section className="px-6 md:px-12 py-16 lg:py-24 border-t border-white-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <div>
         <div className="text-[11px] font-semibold tracking-[3px] uppercase text-white-55 mb-5">
           Why Ravi Capitals

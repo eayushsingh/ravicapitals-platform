@@ -12,11 +12,11 @@ export class AuthService {
   ) {}
 
   async register(email: string, password: string, fullName: string) {
-    const existing = await this.prisma.client.user.findUnique({ where: { email } });
+    const existing = await this.prisma.user.findUnique({ where: { email } });
     if (existing) throw new BadRequestException('User already exists');
 
     const passwordHash = await bcrypt.hash(password, 10);
-    const user = await this.prisma.client.user.create({
+    const user = await this.prisma.user.create({
       data: { email, passwordHash, fullName },
     });
 
@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   async login(email: string, password: string) {
-    const user = await this.prisma.client.user.findUnique({ where: { email } });
+    const user = await this.prisma.user.findUnique({ where: { email } });
     if (!user || !user.passwordHash) throw new UnauthorizedException('Invalid credentials');
 
     const valid = await bcrypt.compare(password, user.passwordHash);
@@ -43,9 +43,9 @@ export class AuthService {
 
     if (!isValid) throw new UnauthorizedException('Invalid cryptographic signature');
 
-    let user = await this.prisma.client.user.findUnique({ where: { walletAddress } });
+    let user = await this.prisma.user.findUnique({ where: { walletAddress } });
     if (!user) {
-      user = await this.prisma.client.user.create({
+      user = await this.prisma.user.create({
         data: {
           email: `${walletAddress.toLowerCase()}@wallet.ravicapitals.com`,
           walletAddress,
@@ -57,7 +57,7 @@ export class AuthService {
   }
 
   async submitKyc(userId: string, docType: string, docNumber: string) {
-    const user = await this.prisma.client.user.update({
+    const user = await this.prisma.user.update({
       where: { id: userId },
       data: {
         kycStatus: 'VERIFIED', // Sandbox auto-approval for MVP

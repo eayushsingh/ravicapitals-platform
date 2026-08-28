@@ -22,12 +22,40 @@ export function PropertiesGrid() {
     async function load() {
       try {
         const res = await fetch("http://localhost:4000/properties");
-        if (res.ok) {
-          const data = await res.json();
-          setProperties(data);
-        }
+        if (!res.ok) throw new Error("API responded with error");
+        const data = await res.json();
+        setProperties(data);
       } catch (e) {
-        console.error("Could not fetch properties", e);
+        console.warn("API offline, rendering default properties:", e);
+        setProperties([
+          {
+            id: "prop-1",
+            title: "Prestige Tech Park — Block C",
+            location: "Whitefield, Bengaluru · Grade A office",
+            type: "COMMERCIAL",
+            expectedYield: "10.2",
+            tokenPrice: 5000,
+            availableTokens: 18400,
+          },
+          {
+            id: "prop-2",
+            title: "Gachibowli Sky Residences",
+            location: "Gachibowli, Hyderabad · Premium apartments",
+            type: "RESIDENTIAL",
+            expectedYield: "8.9",
+            tokenPrice: 5000,
+            availableTokens: 9200,
+          },
+          {
+            id: "prop-3",
+            title: "ORR Growth Corridor — Phase II",
+            location: "Outer Ring Road, Hyderabad · High-growth land",
+            type: "PLOTS",
+            expectedYield: "14.0",
+            tokenPrice: 5000,
+            availableTokens: 4100,
+          },
+        ]);
       }
     }
     load();
@@ -43,7 +71,7 @@ export function PropertiesGrid() {
   };
 
   return (
-    <section id="properties" className="px-12 pb-24 pt-12">
+    <section id="properties" className="px-6 md:px-12 pb-24 pt-12">
       <div className="text-[11px] font-semibold tracking-[3px] uppercase text-white-55 mb-5">
         Live opportunities
       </div>
@@ -51,7 +79,7 @@ export function PropertiesGrid() {
         Open for <span className="text-white-30 font-light">investment.</span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-14">
         {properties.map((prop) => (
           <div
             key={prop.id}

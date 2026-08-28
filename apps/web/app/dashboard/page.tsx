@@ -145,15 +145,15 @@ export default function DashboardPage() {
 
         {/* Holdings Table */}
         <div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
-          <div className="px-6 py-5 border-b border-white/10 flex justify-between items-center">
+          <div className="px-4 sm:px-6 py-5 border-b border-white/10 flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between sm:items-center">
             <h2 className="text-lg font-bold tracking-tight">Your Real Estate Holdings</h2>
-            <button className="text-xs font-semibold px-4 py-2 rounded bg-white/10 hover:bg-white/20 transition-all">
+            <button className="text-xs font-semibold px-4 py-2 rounded bg-white/10 hover:bg-white/20 transition-all w-fit">
               Download SPV Title Deeds
             </button>
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm">
+            <table className="w-full text-left text-sm min-w-[800px]">
               <thead className="bg-white/[0.02] text-xs uppercase text-white/50 border-b border-white/10">
                 <tr>
                   <th className="px-6 py-4">Property & SPV</th>
