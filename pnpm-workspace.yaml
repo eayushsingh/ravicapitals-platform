@@ -3,3 +3,12 @@ packages:
   - "packages/*"
 
 minimumReleaseAge: 0
+strictDepBuilds: false
+
+allowBuilds:
+  "@nestjs/core": true
+  "@prisma/client": true
+  "@prisma/engines": true
+  "prisma": true
+  "keccak": true
+  "secp256k1": true
