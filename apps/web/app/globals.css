@@ -3,9 +3,9 @@
 
 @theme {
   /* ── Brand Palette ── */
-  --color-brand-blue: #1969FE;
-  --color-brand-blue-mid: #2B78FE;
-  --color-brand-blue-deep: #0f4fd4;
+  --color-brand-blue: #38BDF8;
+  --color-brand-blue-mid: #7DD3FC;
+  --color-brand-blue-deep: #0369A1;
   --color-brand-green: #00D664;
   --color-brand-green-mid: #00C853;
   --color-brand-green-soft: rgba(0, 214, 100, 0.15);
@@ -27,7 +27,7 @@
   --color-white-55: rgba(255, 255, 255, 0.60);
   --color-white-30: rgba(255, 255, 255, 0.40);
   --color-white-07: rgba(255, 255, 255, 0.08);
-  --color-brand-blue-dark: #2B78FE;
+  --color-brand-blue-dark: #0EA5E9;
   --color-brand-green-soft: rgba(0, 214, 100, 0.15);
 
   /* ── Animations ── */
