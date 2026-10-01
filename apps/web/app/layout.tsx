@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { Web3Provider } from "@/components/Web3Provider";
 import "./globals.css";
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,8 +21,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "RaviCapitals",
-  description: "Real estate fractional investments",
+  title: "RaviCapitals — Invest in India's Premium Real Estate",
+  description: "Fractional real estate investing from ₹5,000. Pre-leased commercial properties, Grade-A tech parks, and warehousing with guaranteed rental payouts.",
 };
 
 export default function RootLayout({
@@ -24,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${plusJakarta.variable} ${geistSans.variable} ${geistMono.variable}`}>
         <Web3Provider>
           {children}
         </Web3Provider>

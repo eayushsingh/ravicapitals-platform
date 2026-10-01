@@ -7,21 +7,28 @@ export function Stats() {
   ];
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 px-6 md:px-12 border-y border-white-12">
+    <div className="grid grid-cols-2 lg:grid-cols-4 px-6 md:px-14 lg:px-20 border-y border-slate-100">
       {stats.map((stat, idx) => (
         <div
           key={idx}
-          className={`py-8 md:py-11 text-center border-white-12 
-            ${idx % 2 === 0 ? "border-r" : ""} 
-            lg:border-r 
-            ${idx < 2 ? "border-b lg:border-b-0" : ""} 
+          className={`py-9 md:py-12 text-center border-slate-100
+            ${idx % 2 === 0 ? "border-r" : ""}
+            lg:border-r
+            ${idx < 2 ? "border-b lg:border-b-0" : ""}
             last:border-r-0`}
         >
-          <div className="text-[28px] md:text-[38px] font-extrabold tracking-tight text-white">
+          <div
+            className="text-[30px] md:text-[40px] font-black tracking-tight text-slate-900"
+            style={{ letterSpacing: "-0.03em" }}
+          >
             {stat.value}
-            {stat.unit && <span className="text-[18px] md:text-[22px] font-light tracking-normal">{stat.unit}</span>}
+            {stat.unit && (
+              <span className="text-[18px] md:text-[22px] font-normal text-slate-400">
+                {stat.unit}
+              </span>
+            )}
           </div>
-          <div className="text-[10px] md:text-[11.5px] font-medium tracking-[1.5px] uppercase text-white-55 mt-1.5 px-2">
+          <div className="text-[10px] md:text-[11px] font-semibold tracking-[1.5px] uppercase text-slate-400 mt-1.5 px-2">
             {stat.label}
           </div>
         </div>

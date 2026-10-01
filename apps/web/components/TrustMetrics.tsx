@@ -7,27 +7,39 @@ export function TrustMetrics() {
   ];
 
   return (
-    <section className="px-6 md:px-12 py-16 lg:py-24 border-t border-white-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section className="px-6 md:px-14 lg:px-20 py-20 lg:py-28 border-t border-slate-100 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-center">
       <div>
-        <div className="text-[11px] font-semibold tracking-[3px] uppercase text-white-55 mb-5">
+        <div className="text-[11px] font-black tracking-[0.18em] uppercase text-slate-400 mb-5">
           Why Ravi Capitals
         </div>
-        <h2 className="text-[clamp(36px,4.5vw,58px)] font-extrabold tracking-tight text-white leading-tight mb-6">
-          Built on <span className="text-white-30 font-light">trust.</span>
+        <h2
+          className="text-[clamp(34px,4.5vw,58px)] font-black text-slate-900 leading-tight mb-6"
+          style={{ letterSpacing: "-0.03em" }}
+        >
+          Built on{" "}
+          <span className="text-slate-300 font-light">trust.</span>
         </h2>
-        <p className="text-[15px] text-white-55 leading-relaxed max-w-[420px]">
+        <p className="text-[16px] text-slate-500 leading-relaxed max-w-[420px] mb-4">
           Every property on Ravi Capitals is held inside a Special Purpose Vehicle — legally ring-fenced, independently audited, and registered with SEBI regulations.
         </p>
-        <p className="text-[15px] text-white-55 leading-relaxed max-w-[420px] mt-3.5">
+        <p className="text-[16px] text-slate-500 leading-relaxed max-w-[420px]">
           Your investment is yours. Not a promise. A legal title.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-px border border-white-12 rounded-2xl overflow-hidden bg-white-12">
+      <div className="grid grid-cols-2 gap-3">
         {metrics.map((m, idx) => (
-          <div key={idx} className="p-7 bg-white-07">
-            <div className="text-[28px] font-extrabold tracking-tight text-white">{m.val}</div>
-            <div className="text-xs text-white-55 mt-1 leading-normal">{m.lbl}</div>
+          <div
+            key={idx}
+            className="p-7 rounded-[24px] border border-slate-100 hover:border-slate-200 hover:shadow-sm transition-all"
+          >
+            <div
+              className="text-[28px] font-black text-slate-900 mb-1.5"
+              style={{ letterSpacing: "-0.03em", color: "#1969FE" }}
+            >
+              {m.val}
+            </div>
+            <div className="text-[13px] text-slate-500 leading-normal">{m.lbl}</div>
           </div>
         ))}
       </div>

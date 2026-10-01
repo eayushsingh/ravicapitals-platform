@@ -12,7 +12,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-12 h-[68px] border-b border-white-12 bg-brand-blue/55 backdrop-blur-md">
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-14 h-[68px] border-b border-white/10" style={{ background: 'rgba(25, 105, 254, 0.88)', backdropFilter: 'blur(20px)' }}>
         <div className="text-[17px] font-bold tracking-tight text-white">
           Ravi<em className="not-italic font-light opacity-65">Capitals</em>
         </div>
@@ -32,16 +32,18 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           {isConnected ? (
-            <button
+          <button
               onClick={() => disconnect()}
-              className="text-[13px] font-semibold text-brand-green bg-brand-green/10 border border-brand-green/30 px-4 py-2 rounded-md hover:bg-brand-green/20 transition-all"
+              className="text-[13px] font-bold px-4 py-2 rounded-full hover:opacity-90 transition-all"
+              style={{ background: '#00D664', color: '#0A0E1A' }}
             >
               {address?.slice(0, 6)}...{address?.slice(-4)}
             </button>
           ) : (
             <button
               onClick={() => connect({ connector: connectors[0]! })}
-              className="text-[13px] font-semibold text-white bg-white-12 border border-white-30 px-4 sm:px-5 py-2 rounded-md hover:bg-white-30 transition-all cursor-pointer"
+              className="text-[13px] font-bold text-white px-5 py-2 rounded-full hover:opacity-90 transition-all cursor-pointer"
+              style={{ background: 'rgba(255,255,255,0.18)', border: '1.5px solid rgba(255,255,255,0.25)' }}
             >
               Connect<span className="hidden sm:inline"> Wallet</span>
             </button>
@@ -67,7 +69,7 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed top-[68px] left-0 right-0 z-40 bg-brand-blue border-b border-white-12 shadow-2xl p-6 flex flex-col gap-5">
+        <div className="md:hidden fixed top-[68px] left-0 right-0 z-40 border-b border-white/10 shadow-2xl p-6 flex flex-col gap-5" style={{ background: '#1969FE' }}>
           <Link href="#properties" onClick={() => setIsMobileMenuOpen(false)} className="text-[15px] font-medium text-white-55 hover:text-white transition-colors">
             Properties
           </Link>
