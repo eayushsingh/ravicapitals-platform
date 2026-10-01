@@ -2,7 +2,7 @@ export function Hero() {
   return (
     <section
       className="relative min-h-[95vh] flex flex-col lg:flex-row items-center justify-center px-6 md:px-14 lg:px-20 pt-28 pb-32 gap-10 lg:gap-16 overflow-hidden"
-      style={{ background: "linear-gradient(145deg, #0EA5E9 0%, #38BDF8 55%, #0284C7 100%)" }}
+      style={{ background: "linear-gradient(160deg, #4BBDE8 0%, #7DD9F3 45%, #3AACE0 100%)" }}
     >
       {/* Subtle radial glow top-right */}
       <div

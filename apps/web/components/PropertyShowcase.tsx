@@ -195,7 +195,7 @@ export function PropertyShowcase() {
             style={{ letterSpacing: "-0.03em" }}
           >
             Your wealth,<br />
-            <span style={{ color: "#0EA5E9" }}>reimagined.</span>
+            <span style={{ color: "#52C5EA" }}>reimagined.</span>
           </h2>
           <p className="text-[16px] text-slate-500 leading-relaxed max-w-[560px] mx-auto font-medium">
             Pre-leased commercial hubs, warehousing, and Grade-A tech parks with guaranteed rental payouts directly to your bank account.
@@ -214,7 +214,7 @@ export function PropertyShowcase() {
           <a
             href="#properties"
             className="px-8 py-4 rounded-full text-[15px] font-bold text-white transition-all hover:opacity-90 hover:-translate-y-0.5 shadow-lg"
-            style={{ background: "#0EA5E9" }}
+            style={{ background: "#52C5EA" }}
           >
             Browse all properties
           </a>

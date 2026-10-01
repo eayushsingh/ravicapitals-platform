@@ -35,7 +35,7 @@ export function TrustMetrics() {
           >
             <div
               className="text-[28px] font-black text-slate-900 mb-1.5"
-              style={{ letterSpacing: "-0.03em", color: "#0EA5E9" }}
+              style={{ letterSpacing: "-0.03em", color: "#52C5EA" }}
             >
               {m.val}
             </div>
