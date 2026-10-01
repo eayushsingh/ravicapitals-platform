@@ -12,7 +12,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-14 h-[68px] border-b border-white/15" style={{ background: 'rgba(75, 189, 232, 0.82)', backdropFilter: 'blur(20px)' }}>
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-14 h-[68px] border-b border-white/15" style={{ background: 'rgba(74, 144, 226, 0.88)', backdropFilter: 'blur(20px)' }}>
         <div className="text-[17px] font-bold tracking-tight text-white">
           Ravi<em className="not-italic font-light opacity-65">Capitals</em>
         </div>
@@ -69,7 +69,7 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed top-[68px] left-0 right-0 z-40 border-b border-white/15 shadow-2xl p-6 flex flex-col gap-5" style={{ background: '#4BBDE8' }}>
+        <div className="md:hidden fixed top-[68px] left-0 right-0 z-40 border-b border-white/15 shadow-2xl p-6 flex flex-col gap-5" style={{ background: '#4A90E2' }}>
           <Link href="#properties" onClick={() => setIsMobileMenuOpen(false)} className="text-[15px] font-medium text-white-55 hover:text-white transition-colors">
             Properties
           </Link>

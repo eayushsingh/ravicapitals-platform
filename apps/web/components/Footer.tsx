@@ -19,7 +19,7 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center px-4 sm:px-0">
           <button
             className="text-[15px] font-black px-10 py-4 rounded-full hover:-translate-y-0.5 transition-all cursor-pointer w-full sm:w-auto shadow-lg"
-            style={{ background: "#52C5EA", color: "white" }}
+            style={{ background: "#4A90E2", color: "white" }}
           >
             Create your account
           </button>

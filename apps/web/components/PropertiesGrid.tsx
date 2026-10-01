@@ -114,7 +114,7 @@ export function PropertiesGrid() {
                 <button
                   onClick={() => setSelectedProperty(prop)}
                   className="text-[12px] font-bold text-white px-4 py-2 rounded-full transition-all cursor-pointer hover:opacity-90"
-                  style={{ background: '#52C5EA' }}
+                  style={{ background: '#4A90E2' }}
                 >
                   Invest now
                 </button>

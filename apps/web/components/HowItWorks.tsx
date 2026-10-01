@@ -38,7 +38,7 @@ export function HowItWorks() {
           >
             <div
               className="text-[40px] font-black mb-7 leading-none"
-              style={{ color: "#52C5EA", letterSpacing: "-0.04em", opacity: 0.18 }}
+              style={{ color: "#4A90E2", letterSpacing: "-0.04em", opacity: 0.15 }}
             >
               {item.step}
             </div>

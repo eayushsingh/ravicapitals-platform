@@ -3,9 +3,9 @@
 
 @theme {
   /* ── Brand Palette ── */
-  --color-brand-blue: #52C5EA;
-  --color-brand-blue-mid: #7DD9F3;
-  --color-brand-blue-deep: #3AACE0;
+  --color-brand-blue: #4A90E2;
+  --color-brand-blue-mid: #6BA4E7;
+  --color-brand-blue-deep: #387BCE;
   --color-brand-green: #00D664;
   --color-brand-green-mid: #00C853;
   --color-brand-green-soft: rgba(0, 214, 100, 0.15);
@@ -27,7 +27,7 @@
   --color-white-55: rgba(255, 255, 255, 0.60);
   --color-white-30: rgba(255, 255, 255, 0.40);
   --color-white-07: rgba(255, 255, 255, 0.08);
-  --color-brand-blue-dark: #0EA5E9;
+  --color-brand-blue-dark: #387BCE;
   --color-brand-green-soft: rgba(0, 214, 100, 0.15);
 
   /* ── Animations ── */
@@ -36,18 +36,39 @@
   --animate-float: floatY 4s ease-in-out infinite;
 
   @keyframes riseUp {
-    from { opacity: 0; transform: translateY(28px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes signalPulse {
-    0%   { opacity: 0.8; transform: scale(1); }
-    100% { opacity: 0;   transform: scale(2.2); }
+    0% {
+      opacity: 0.8;
+      transform: scale(1);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(2.2);
+    }
   }
 
   @keyframes floatY {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-8px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
   }
 }
 
@@ -73,4 +94,6 @@ body {
 }
 
 /* Smooth scroll target offset for sticky nav */
-[id] { scroll-margin-top: 80px; }
+[id] {
+  scroll-margin-top: 80px;
+}

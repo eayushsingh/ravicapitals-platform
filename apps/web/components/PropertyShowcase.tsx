@@ -29,7 +29,7 @@ const CARDS = [
     filled: "62% Funded",
     badge: "MONTHLY RENTAL GUARANTEE",
     tag: "LOGISTICS",
-    accent: "#38BDF8",
+    accent: "#4A90E2",
     gradient: "linear-gradient(160deg, #0d1a3c 0%, #0A0E1A 55%, #050b1f 100%)",
     highlight: "#60a5fa",
     irr: "12.1% Target IRR",
@@ -195,7 +195,7 @@ export function PropertyShowcase() {
             style={{ letterSpacing: "-0.03em" }}
           >
             Your wealth,<br />
-            <span style={{ color: "#52C5EA" }}>reimagined.</span>
+            <span style={{ color: "#4A90E2" }}>reimagined.</span>
           </h2>
           <p className="text-[16px] text-slate-500 leading-relaxed max-w-[560px] mx-auto font-medium">
             Pre-leased commercial hubs, warehousing, and Grade-A tech parks with guaranteed rental payouts directly to your bank account.
@@ -214,7 +214,7 @@ export function PropertyShowcase() {
           <a
             href="#properties"
             className="px-8 py-4 rounded-full text-[15px] font-bold text-white transition-all hover:opacity-90 hover:-translate-y-0.5 shadow-lg"
-            style={{ background: "#52C5EA" }}
+            style={{ background: "#4A90E2" }}
           >
             Browse all properties
           </a>
